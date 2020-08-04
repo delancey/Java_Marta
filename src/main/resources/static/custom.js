@@ -5,11 +5,15 @@ function initMap() {
         zoom: 15,
         scrollwheel: false
     });
+
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+
 	
     for (i=0; i<busLocations.length; i++){
         var marker = new google.maps.Marker({
             position: { lat: parseFloat(busLocations[i].LATITUDE), lng: parseFloat(busLocations[i].LONGITUDE) },
             map: map,
+            icon: iconBase + 'bus.png'
         });
     }
 
